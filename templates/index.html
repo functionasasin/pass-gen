@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PassGen | Password Generator Tool</title>
+		<link rel="stylesheet" href="/static/CSS/styles.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+			crossorigin="anonymous"
+		/>
+	</head>
+
+	<body>
+		<!-- <h1 class="title">PASSGEN</h1> -->
+		<img src="\static\Images\logo.png" alt="" class="logo" />
+
+		<div class="contents">
+			<h3>Generate a Strong Password</h3>
+
+			<div class="container-fluid">
+				<div class="row">
+					<div class="input-group password">
+						<input
+							type="text"
+							class="form-control generated-password"
+							value=""
+							aria-label="Recipient's username with two button addons"
+							disabled
+						/>
+						<span class="input-group-text" id="inputGroup-sizing-lg"
+							><a href="" class="copy"><img src="\static\Images\copy.png" alt="" /></a
+						></span>
+						<span class="input-group-text sync" id="inputGroup-sizing-lg"
+							><a href=""><img src="\static\Images\sync.png" alt="" /></a
+						></span>
+					</div>
+				</div>
+				<div class="row customize">
+					<div class="col custom">
+						<h5>Customize your password</h5>
+
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col left">
+									<div class="container">
+										<div class="row">
+											<label for="" class="form-label length">Length</label>
+
+											<div class="col-md-3">
+												<input
+													type="number"
+													class="form-control length-num"
+													id="sliderValue"
+													value="4"
+													min="4"
+													max="26"
+												/>
+											</div>
+											<div class="col-md-8 slider-div">
+												<input
+													type="range"
+													class="form-range slider"
+													id="slider"
+													value="4"
+													min="4"
+													max="26"
+													step="1"
+												/>
+											</div>
+										</div>
+
+										<div class="row">
+											<label for="customRange2" class="form-label length"
+												>Password Type</label
+											>
+											<select
+												class="form-select pass-type"
+												aria-label="Default select example"
+											>
+												<option value="1" selected>Random Password</option>
+												<option value="2">Memorable Password</option>
+												<option value="3">PIN</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-4 right">
+									<!-- <table class="table table-borderless">
+										<tr class="check-1">
+											<td class="label-1">@twitter</td>
+											<td class="icon-1">@twitter</td>
+										</tr>
+										<tr class="check-2">
+											<td class="label-2">@twitter</td>
+											<td class="icon-2">@twitter</td>
+										</tr>
+										<tr class="check-3">
+											<td class="label-3">@twitter</td>
+											<td class="icon-3">@twitter</td>
+										</tr>
+										<tr class="check-4">
+											<td class="label-4">@twitter</td>
+											<td class="icon-4">@twitter</td>
+										</tr>
+									</table> -->
+
+									<div
+										class="form-check form-switch form-check-reverse switch-div"
+									>
+										<input
+											class="form-check-input switch"
+											type="checkbox"
+											id="uppercase"
+										/>
+										<label class="form-check-label" for="flexSwitchCheckReverse"
+											>Uppercase</label
+										>
+									</div>
+									<div
+										class="form-check form-switch form-check-reverse switch-div"
+									>
+										<input
+											class="form-check-input switch"
+											type="checkbox"
+											id="lowercase"
+										/>
+										<label class="form-check-label" for="flexSwitchCheckReverse"
+											>Lowercase</label
+										>
+									</div>
+									<div
+										class="form-check form-switch form-check-reverse switch-div"
+									>
+										<input
+											class="form-check-input switch"
+											type="checkbox"
+											id="symbols"
+										/>
+										<label class="form-check-label" for="flexSwitchCheckReverse"
+											>Symbols</label
+										>
+									</div>
+									<div
+										class="form-check form-switch form-check-reverse switch-div"
+									>
+										<input
+											class="form-check-input switch"
+											type="checkbox"
+											id="numbers"
+										/>
+										<label class="form-check-label" for="flexSwitchCheckReverse"
+											>Numbers</label
+										>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+			integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+			crossorigin="anonymous"
+		></script>
+		<script>
+			const slider = document.getElementById("slider");
+			const sliderValue = document.getElementById("sliderValue");
+
+			sliderValue.value = slider.value;
+
+			slider.addEventListener("input", function () {
+				sliderValue.value = slider.value;
+			});
+
+			sliderValue.addEventListener("input", function () {
+				if (parseInt(sliderValue.value) < parseInt(slider.min)) {
+					sliderValue.value = slider.min;
+				} else if (parseInt(sliderValue.value) > parseInt(slider.max)) {
+					sliderValue.value = slider.max;
+				}
+
+				slider.value = sliderValue.value;
+			});
+		</script>
+		<script src="/static/js/main.js"></script>
+		
+	</body>
+</html>
