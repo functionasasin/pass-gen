@@ -1,2 +1,2 @@
 # pass-gen
-Python Web Application
+Web application that's developed using flask to generate a random password based on the requirements chosen
